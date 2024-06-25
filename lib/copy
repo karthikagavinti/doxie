@@ -1,0 +1,765 @@
+import 'package:flutter/material.dart';
+import 'package:meals/home_screen.dart';
+
+class MiddlePage extends StatelessWidget {
+  final _titleController = TextEditingController();
+
+  MiddlePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 300, // Adjusted height for PageView
+                  child: PageView.builder(
+                    controller: PageController(
+                      viewportFraction: 0.8, // Adjusted viewport fraction
+                    ),
+                    itemCount: 1, // Only one item to show at a time
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.blue, width: 0.6),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'PDF📄',
+                              style: TextStyle(fontSize: 32, color: Colors.blue),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                SizedBox(height: 16),
+                Padding(
+                  padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom,
+                  ),
+                  child: Column(
+                    children: [
+                      TextField(
+                        controller: _titleController,
+                        maxLength: 50,
+                        decoration: const InputDecoration(
+                          labelText: 'Title',
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      TextField(
+                        keyboardType: TextInputType.number,
+                        decoration: const InputDecoration(
+                          prefixText: '\$ ',
+                          labelText: 'IP Address',
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('Cancel'),
+                          ),
+                          SizedBox(width: 16),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Handle save action
+                            },
+                            child: const Text('Save Details'),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+============================loop of filess
+import 'package:flutter/material.dart';
+
+class MiddlePage extends StatelessWidget {
+  final _titleController = TextEditingController();
+  MiddlePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 500, // Fix the height for PageView
+                  child: PageView.builder(
+                    controller: PageController(viewportFraction: 0.9),
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.blue, width: 0.6),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'PDF📄',
+                              style:
+                                  TextStyle(fontSize: 32, color: Colors.blue),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                SizedBox(height: 50),
+                Padding(
+                  padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom,
+                  ),
+                  child: Column(
+                    children: [
+                      TextField(
+                        controller: _titleController,
+                        maxLength: 50,
+                        decoration: const InputDecoration(
+                          label: Text('Referral Code'),
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          TextField(
+                            controller: _titleController,
+                            maxLength: 50,
+                            decoration: const InputDecoration(
+                              label: Text('Code'),
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: TextField(
+                                  keyboardType: TextInputType.number,
+                                  decoration: const InputDecoration(
+                                    prefixText: '\$ ',
+                                    label: Text('IP Address'),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 16),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          Row(
+                            children: [
+                              const Spacer(),
+                              TextButton(
+                                onPressed: () {
+                                  ///
+                                },
+                                child: const Text('Cancel'),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {},
+                                // _submitExpenseData,
+                                child: const Text('Save Details'),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+================================================
+
+
+
+ ElevatedButton(
+                                onPressed: () {Navigator.push(context,
+          MaterialPageRoute(builder: (context) => History()));},
+                                // _submitExpenseData,
+                                child: const Text('History'),
+                              ),
+
+
+================================middle page
+import 'package:flutter/material.dart';
+
+class MiddlePage extends StatelessWidget {
+  final _titleController = TextEditingController();
+  MiddlePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 500, // Fix the height for PageView
+                  child: PageView.builder(
+                    controller: PageController(viewportFraction: 0.9),
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blueGrey,
+                            border: Border.all(color: Colors.blue, width: 0.6),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'PDF📄',
+                              style:
+                                  TextStyle(fontSize: 32, color: Colors.blue),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                SizedBox(height: 50),
+                Padding(
+                  padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom,
+                  ),
+                  child: Column(
+                    children: [
+                      TextField(
+                        controller: _titleController,
+                        maxLength: 50,
+                        decoration: const InputDecoration(
+                          label: Text('Referral Code'),
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          TextField(
+                            controller: _titleController,
+                            maxLength: 50,
+                            decoration: const InputDecoration(
+                              label: Text('Code'),
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: TextField(
+                                  keyboardType: TextInputType.number,
+                                  decoration: const InputDecoration(
+                                    prefixText: '\$ ',
+                                    label: Text('IP Address'),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 16),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          Row(
+                            children: [
+                              const Spacer(),
+                              TextButton(
+                                onPressed: () {
+                                  ///
+                                },
+                                child: const Text('Cancel'),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {},
+                                // _submitExpenseData,
+                                child: const Text('Save Details'),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+================================================reload
+import 'package:flutter/material.dart';
+import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
+
+class MiddlePage extends StatefulWidget {
+  final String pdfPath;
+
+  MiddlePage({Key? key, required this.pdfPath}) : super(key: key);
+
+  @override
+  _MiddlePageState createState() => _MiddlePageState();
+}
+
+class _MiddlePageState extends State<MiddlePage> {
+  late PDFDocument _doc;
+  bool _loading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _initPDF();
+  }
+
+  _initPDF() async {
+    try {
+      final doc = await PDFDocument.fromAsset(
+          widget.pdfPath); // Use the correct asset path
+      setState(() {
+        _doc = doc;
+        _loading = false;
+      });
+    } catch (e) {
+      print("Error loading PDF: $e");
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  height: 500,
+                  child: _loading
+                      ? Center(child: CircularProgressIndicator())
+                      : PDFViewer(
+                          document: _doc,
+                          zoomSteps: 1,
+                        ),
+                ),
+                SizedBox(height: 36),
+                Text(
+                  'Enter Referral Code',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 8),
+                TextField(
+                  controller: TextEditingController(),
+                  decoration: InputDecoration(
+                    hintText: 'Enter your referral code',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'IP Address',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 8),
+                TextField(
+                  controller: TextEditingController(),
+                  decoration: InputDecoration(
+                    hintText: 'IP Address',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Enter Verification Code',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 8),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: TextEditingController(),
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          hintText: 'Enter verification code',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 16),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle verification button press
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        padding: EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        elevation: 3,
+                      ),
+                      child: Text(
+                        'Verify',
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 24),
+                ElevatedButton(
+                  onPressed: () {
+                    // Navigate to another page or perform action
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepOrange,
+                    padding: EdgeInsets.symmetric(
+                      vertical: 16,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    elevation: 3,
+                  ),
+                  child: Text(
+                    'Save Details',
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+=======================================================drawer
+import 'package:flutter/material.dart';
+import 'package:doxie/home_screen.dart';
+import 'package:doxie/screens/previous.dart'; // Import the History screen
+
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      backgroundColor: Colors.lightBlue,
+      child: Column(
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Colors.lightBlue,
+                  Color.fromARGB(255, 163, 20, 20),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            child: Row(
+              children: [
+                const CircleAvatar(
+                  radius: 40,
+                  backgroundColor: Colors.white,
+                  child:
+                      Icon(Icons.person, size: 48, color: Colors.purpleAccent),
+                ),
+                const SizedBox(width: 20),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'Welcome,',
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 18,
+                      ),
+                    ),
+                    Text(
+                      'Doxie User!',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.all(8), // Ensure no padding
+              children: [
+                buildDrawerItem(context, Icons.home, 'Home', Colors.blue, () {
+                  Navigator.pop(context); // Close the drawer
+                  Navigator.pushReplacement(
+                      context, _createRoute(const HomeScreen()));
+                }),
+                SizedBox(height: 1.5),
+                buildDrawerItem(
+                    context, Icons.search, 'Search', Colors.green, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(
+                    context, Icons.picture_as_pdf, 'Previous', Colors.orange,
+                    () {
+                  Navigator.push(context, _createRoute(History()));
+                }),
+                SizedBox(height: 1.5),
+                buildDrawerItem(
+                    context, Icons.voice_chat, 'Voice', Colors.red, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(context, Icons.group, 'Invite Friends',
+                    Colors.purple, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(
+                    context, Icons.settings, 'Settings', Colors.teal, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(
+                    context, Icons.star, 'Favorites', Colors.yellow, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(context, Icons.notifications, 'Notifications',
+                    Colors.indigo, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(
+                    context, Icons.feedback, 'Feedback', Colors.brown, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(
+                    context, Icons.rate_review, 'Rate App', Colors.pink, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(
+                    context, Icons.info, 'About Us', Colors.cyan, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(context, Icons.privacy_tip, 'Privacy Policy',
+                    Colors.lime, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(context, Icons.gavel, 'Terms & Conditions',
+                    Colors.deepPurple, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(context, Icons.language, 'Language',
+                    Colors.orangeAccent, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(context, Icons.help, 'Help & Support',
+                    Colors.lightGreen, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(context, Icons.question_answer, 'FAQ',
+                    Colors.redAccent, () {}),
+                SizedBox(height: 1.5),
+                buildDrawerItem(
+                    context, Icons.dark_mode, 'Dark Mode', Colors.blueAccent,
+                    () {
+                  // Toggle Dark Mode
+                }),
+                SizedBox(height: 1.5),
+                buildDrawerItem(
+                    context, Icons.exit_to_app, 'Sign out', Colors.grey, () {}),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            color: Colors.blueGrey,
+            child: Center(
+              child: Text(
+                'Version 3.0.5',
+                style: TextStyle(fontSize: 16, color: Colors.white),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildDrawerItem(BuildContext context, IconData icon, String title,
+      Color backgroundColor, VoidCallback onTap) {
+    return ListTile(
+      leading: RoundedIcon(
+        icon: icon,
+        color: Colors.white,
+        backgroundColor: backgroundColor,
+      ),
+      title: Text(
+        title,
+        style: TextStyle(
+          color: Theme.of(context).colorScheme.onBackground,
+          fontSize: 18,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      onTap: onTap,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      tileColor: Color.fromARGB(255, 51, 102, 131),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+      trailing:
+          const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
+    );
+  }
+
+  Route _createRoute(Widget page) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => page,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(-1.0, 0.0); // Slide in from left
+        const end = Offset.zero;
+        const curve = Curves.ease;
+
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
+    );
+  }
+}
+
+class RoundedIcon extends StatelessWidget {
+  final IconData icon;
+  final Color color;
+  final Color backgroundColor;
+
+  const RoundedIcon(
+      {required this.icon,
+      required this.color,
+      required this.backgroundColor,
+      super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        shape: BoxShape.circle,
+      ),
+      child: Icon(icon, color: color),
+    );
+  }
+}
+============
+import 'dart:ui' as ui;
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Frosted Glass Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const FrostedGlassEffect(),
+    );
+  }
+}
+
+class FrostedGlassEffect extends StatelessWidget {
+  const FrostedGlassEffect({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          // Background content
+          FlutterLogo(size: MediaQuery.of(context).size.height),
+          // Frosted glass layer
+          Center(
+            child: ClipRect(
+              child: BackdropFilter(
+                filter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                child: Container(
+                  alignment: Alignment.center,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  height: MediaQuery.of(context).size.height * 0.2,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  child: const Text(
+                    'Frosted Glass Effect',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

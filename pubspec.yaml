@@ -1,0 +1,55 @@
+name: doxie
+description: "A new Flutter project."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.4 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^1.0.3
+  flutter_pdfview: ^1.0.4
+  flutter_tts: ^3.0.1
+  cupertino_icons: ^1.0.6
+  google_fonts: ^6.2.1
+  transparent_image: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - lib/assets/Doxie_logo.png
+    - lib/assets/google.png
+    - lib/assets/home
+    - lib/assets/previous
+    - lib/assets/groups
+    - lib/assets/tooth
+    - lib/assets/voice
+    - lib/assets/favorite
+    - lib/assets/search
+    - lib/assets/privacy
+    - lib/assets/about_as
+    - lib/assets/rating
+    - lib/assets/feedback
+    - lib/assets/terms
+    - lib/assets/language
+    - lib/assets/help
+    - lib/assets/question
+    - lib/assets/signout
+    - lib/assets/moon
+
+  # fonts:
+  #   - family: SFUIDisplay
+  #     fonts:
+  #       - asset: assets/fonts/SFUIDisplay-Regular.ttf
+  #   - family: AnotherFont
+  #     fonts:
+  #       - asset: assets/fonts/AnotherFont-Regular.ttf
